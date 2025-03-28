@@ -1,0 +1,1467 @@
+[
+    {
+      "name": "Pujol",
+      "tags": ["restaurant", "food", "modern mexican", "fine dining", "tasting menu", "omakase"],
+      "price": "$$$$"
+    },
+    {
+      "name": "El Moro / Churrería el Moro",
+      "tags": ["restaurant", "food", "dessert", "churros", "cafe", "chocolate"],
+      "price": "$"
+    },
+    {
+      "name": "Tacos los Jaime",
+      "tags": ["restaurant", "food", "tacos", "pastor"],
+      "price": "$"
+    },
+    {
+      "name": "Los Juanes",
+      "tags": ["restaurant", "food", "tacos", "chorizo", "street food"],
+      "price": "$"
+    },
+    {
+      "name": "El Compita | Birria de res",
+      "tags": ["restaurant", "food", "tacos", "birria"],
+      "price": "$"
+    },
+    {
+      "name": "Tacos del Sur",
+      "tags": ["restaurant", "food", "tacos"],
+      "price": "$"
+    },
+    {
+      "name": "Limosneros",
+      "tags": ["restaurant", "food", "modern mexican", "tacos", "fine dining", "tasting menu"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Mi Compa Chava",
+      "tags": ["restaurant", "food", "seafood", "mexican", "aguachile", "sinaloan"],
+      "price": "$$$"
+    },
+    {
+      "name": "La Pinguica",
+      "tags": ["restaurant", "food", "tacos", "pastor", "suadero"],
+      "price": "$"
+    },
+    {
+      "name": "Taquería Orinoco",
+      "tags": ["restaurant", "food", "tacos", "northern mexican", "chain"],
+      "price": "$$"
+    },
+    {
+      "name": "Contramar",
+      "tags": ["restaurant", "food", "seafood", "mexican", "upscale lunch"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Expendio de Maíz Sin Nombre",
+      "tags": ["restaurant", "food", "modern mexican", "corn-focused", "tasting menu", "no menu"],
+      "price": "$$$"
+    },
+    {
+      "name": "Panadería Rosetta",
+      "tags": ["restaurant", "food", "bakery", "cafe", "italian influence"],
+      "price": "$$"
+    },
+    {
+      "name": "Rosetta",
+      "tags": ["restaurant", "food", "italian", "mexican influence", "upscale"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Taqueria El Turix / El Turix",
+      "tags": ["restaurant", "food", "tacos", "cochinita pibil", "yucatecan"],
+      "price": "$$"
+    },
+    {
+      "name": "El Pescadito",
+      "tags": ["restaurant", "food", "tacos", "seafood"],
+      "price": "$$"
+    },
+    {
+      "name": "La Gruta",
+      "tags": ["restaurant", "food", "mexican", "tourist experience", "cave", "day trip"],
+      "price": "$$$"
+    },
+    {
+      "name": "El Hidalguense",
+      "tags": ["restaurant", "food", "barbacoa", "mexican", "upscale"],
+      "price": "$$$"
+    },
+    {
+      "name": "El Gran Abanico",
+      "tags": ["restaurant", "food", "carnitas", "tacos", "mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "Los Tres Reyes",
+      "tags": ["restaurant", "food", "barbacoa", "mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "Coox Hanal",
+      "tags": ["restaurant", "food", "yucatecan", "mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "La Hortaliza",
+      "tags": ["restaurant", "food", "tacos", "guisados", "mexican"],
+      "price": "$"
+    },
+    {
+      "name": "El Cardenal",
+      "tags": ["restaurant", "food", "traditional mexican", "breakfast", "mole", "institution"],
+      "price": "$$$"
+    },
+    {
+      "name": "La Poblanita",
+      "tags": ["restaurant", "food", "poblano", "mexican", "mole"],
+      "price": "$$"
+    },
+    {
+      "name": "Pozoles Moctezuma",
+      "tags": ["restaurant", "food", "pozole", "mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "Porfirio's",
+      "tags": ["restaurant", "food", "modern mexican", "upscale", "churros", "festive"],
+      "price": "$$$$"
+    },
+    {
+      "name": "La Opera Bar / La Ópera",
+      "tags": ["restaurant", "bar", "cantina", "mexican", "historic"],
+      "price": "$$"
+    },
+    {
+      "name": "La Numero Uno",
+      "tags": ["restaurant", "bar", "cantina"],
+      "price": "$$"
+    },
+    {
+      "name": "Tio Pepe Cantina / Cantina Tio Pepe",
+      "tags": ["restaurant", "bar", "cantina", "historic"],
+      "price": "$$"
+    },
+    {
+      "name": "Joe Gelato",
+      "tags": ["restaurant", "food", "dessert", "gelato"],
+      "price": "$"
+    },
+    {
+      "name": "Fonda Margarita",
+      "tags": ["restaurant", "food", "breakfast", "traditional mexican", "cult fonda"],
+      "price": "$$"
+    },
+    {
+      "name": "Rancheras Mantecados",
+      "tags": ["restaurant", "food", "street food", "antojitos", "quesadillas", "gorditas"],
+      "price": "$"
+    },
+    {
+      "name": "Bakers",
+      "tags": ["restaurant", "food", "bakery", "pastries"],
+      "price": "$$"
+    },
+    {
+      "name": "Vulevú Bakery",
+      "tags": ["restaurant", "food", "bakery", "pastries"],
+      "price": "$$"
+    },
+    {
+      "name": "Misse en Place",
+      "tags": ["restaurant", "food", "bakery", "pastries"],
+      "price": "$$"
+    },
+    {
+      "name": "Tizne Tacomotora / TIZNE",
+      "tags": ["restaurant", "food", "tacos", "modern mexican", "smoked meats"],
+      "price": "$$"
+    },
+    {
+      "name": "Tacos Frank",
+      "tags": ["restaurant", "food", "tacos", "traditional mexican"],
+      "price": "$"
+    },
+    {
+      "name": "Barbacoa Gonzalitos",
+      "tags": ["restaurant", "food", "tacos", "northern mexican", "barbacoa"],
+      "price": "$$"
+    },
+    {
+      "name": "Taquearte",
+      "tags": ["restaurant", "food", "tacos", "mexican chain"],
+      "price": "$$"
+    },
+    {
+      "name": "El Asadero",
+      "tags": ["restaurant", "food", "tacos", "northern mexican", "grill"],
+      "price": "$$"
+    },
+    {
+      "name": "Quintonil",
+      "tags": ["restaurant", "food", "modern mexican", "fine dining", "tasting menu"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Sud 777",
+      "tags": ["restaurant", "food", "modern mexican", "fine dining", "french influence", "architectural"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Maximo Bistrot Local / Maximo Bistrot",
+      "tags": ["restaurant", "food", "modern mexican", "farm-to-table", "european influence", "fine dining"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Maldita Fonda",
+      "tags": ["restaurant", "food", "mexican", "fonda style", "elevated"],
+      "price": "$$"
+    },
+    {
+      "name": "Carajillo",
+      "tags": ["restaurant", "food", "modern mexican", "bar food", "instagrammable"],
+      "price": "$$$"
+    },
+    {
+      "name": "Sonora Grill / Sonora Grill Prime / Prime Steak Club",
+      "tags": ["restaurant", "food", "steakhouse", "mexican chain", "sonoran"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Mr. Blancos",
+      "tags": ["restaurant", "food", "bar food"],
+      "price": "$$$"
+    },
+    {
+      "name": "La Parrillita",
+      "tags": ["restaurant", "food", "grill", "mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "El Borrego Viudo",
+      "tags": ["restaurant", "food", "tacos", "late night"],
+      "price": "$$"
+    },
+    {
+      "name": "Cafe el Pendulo / El Péndulo",
+      "tags": ["restaurant", "cafe", "bookstore", "casual meals"],
+      "price": "$$"
+    },
+    {
+      "name": "Cafe Tacuba",
+      "tags": ["restaurant", "cafe", "food", "traditional mexican", "historic", "breakfast"],
+      "price": "$$$"
+    },
+    {
+      "name": "Criollo",
+      "tags": ["restaurant", "food", "oaxacan", "modern mexican", "fine dining"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Lardo",
+      "tags": ["restaurant", "food", "mediterranean", "mexican fusion", "bakery", "brunch"],
+      "price": "$$$"
+    },
+    {
+      "name": "Merkava",
+      "tags": ["restaurant", "food", "israeli", "middle eastern"],
+      "price": "$$$"
+    },
+    {
+      "name": "Yakumanka",
+      "tags": ["restaurant", "food", "peruvian", "seafood"],
+      "price": "$$$"
+    },
+    {
+      "name": "Lalo!",
+      "tags": ["restaurant", "food", "breakfast", "brunch", "mexican-american fusion"],
+      "price": "$$$"
+    },
+    {
+      "name": "La Casa de Toño",
+      "tags": ["restaurant", "food", "pozole", "antojitos", "mexican chain"],
+      "price": "$"
+    },
+    {
+      "name": "Kiin Thai-Viet Eatery",
+      "tags": ["restaurant", "food", "vietnamese", "thai"],
+      "price": "$$"
+    },
+    {
+      "name": "Tandoor",
+      "tags": ["restaurant", "food", "indian", "pakistani"],
+      "price": "$$"
+    },
+    {
+      "name": "La Casbah",
+      "tags": ["restaurant", "food", "north african", "moroccan"],
+      "price": "$$"
+    },
+    {
+      "name": "Pho King",
+      "tags": ["restaurant", "food", "vietnamese"],
+      "price": "$$"
+    },
+    {
+      "name": "Gruta Ehden",
+      "tags": ["restaurant", "food", "lebanese", "middle eastern"],
+      "price": "$$"
+    },
+    {
+      "name": "Al Andalus",
+      "tags": ["restaurant", "food", "lebanese", "middle eastern", "dessert"],
+      "price": "$$"
+    },
+    {
+      "name": "Jamil",
+      "tags": ["restaurant", "food", "lebanese", "middle eastern"],
+      "price": "$$"
+    },
+    {
+      "name": "Balkan Grill",
+      "tags": ["restaurant", "food", "serbian", "balkan"],
+      "price": "$$"
+    },
+    {
+      "name": "Bariloche",
+      "tags": ["restaurant", "food", "uruguayan", "steakhouse"],
+      "price": "$$$"
+    },
+    {
+      "name": "Kolobok",
+      "tags": ["restaurant", "food", "russian"],
+      "price": "$$"
+    },
+    {
+      "name": "Comicx",
+      "tags": ["restaurant", "food", "american", "theme restaurant"],
+      "price": "$$"
+    },
+    {
+      "name": "El Bajio",
+      "tags": ["restaurant", "food", "traditional mexican", "chain"],
+      "price": "$$"
+    },
+    {
+      "name": "Chuck E. Cheese",
+      "tags": ["restaurant", "food", "american chain", "pizza", "kids entertainment", "family friendly"],
+      "price": "$$"
+    },
+    {
+      "name": "Italianni's",
+      "tags": ["restaurant", "food", "italian-american chain"],
+      "price": "$$"
+    },
+    {
+      "name": "Cafe El Ocho",
+      "tags": ["restaurant", "cafe"],
+      "price": "$$"
+    },
+    {
+      "name": "Xaman Bar",
+      "tags": ["restaurant", "bar", "cocktails", "speakeasy", "nightlife"],
+      "price": "$$$"
+    },
+    {
+      "name": "Handshake Speakeasy",
+      "tags": ["restaurant", "bar", "cocktails", "speakeasy", "nightlife"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Hanky Panky Cocktail Bar",
+      "tags": ["restaurant", "bar", "cocktails", "speakeasy", "nightlife"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Casa Franca",
+      "tags": ["restaurant", "bar", "cocktails", "jazz club", "italian", "nightlife"],
+      "price": "$$$"
+    },
+    {
+      "name": "Licorería Limantour",
+      "tags": ["restaurant", "bar", "cocktails", "nightlife"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Casa Prunes",
+      "tags": ["restaurant", "bar", "cocktails", "wine", "nightlife"],
+      "price": "$$$"
+    },
+    {
+      "name": "El Laboratorio (at Casa Prunes)",
+      "tags": ["restaurant", "bar", "cocktails", "speakeasy", "nightlife"],
+      "price": "$$$"
+    },
+    {
+      "name": "Bósforo",
+      "tags": ["restaurant", "bar", "mezcaleria", "nightlife"],
+      "price": "$$"
+    },
+    {
+      "name": "Café de Nadie",
+      "tags": ["restaurant", "bar", "cocktails", "nightlife"],
+      "price": "$$"
+    },
+    {
+      "name": "La Pitahaya Vegana",
+      "tags": ["restaurant", "food", "vegan", "tacos"],
+      "price": "$$"
+    },
+    {
+      "name": "Fishers",
+      "tags": ["restaurant", "food", "seafood", "mexican chain"],
+      "price": "$$"
+    },
+    {
+      "name": "Ladina Bar",
+      "tags": ["restaurant", "bar", "cocktails", "nightlife"],
+      "price": "$$"
+    },
+    {
+      "name": "Deleted Souls",
+      "tags": ["restaurant", "bar", "cocktails", "nightlife"],
+      "price": "$$$"
+    },
+    {
+      "name": "Tokyo Music Bar",
+      "tags": ["restaurant", "bar", "cocktails", "listening bar", "nightlife"],
+      "price": "$$$"
+    },
+    {
+      "name": "Local1",
+      "tags": ["restaurant", "bar", "wine bar", "natural wine", "nightlife"],
+      "price": "$$$"
+    },
+    {
+      "name": "Azul Histórico",
+      "tags": ["restaurant", "food", "traditional mexican", "upscale", "architecture"],
+      "price": "$$$"
+    },
+    {
+      "name": "Downtown Bar",
+      "tags": ["restaurant", "bar", "cocktails", "rooftop", "nightlife"],
+      "price": "$$$"
+    },
+    {
+      "name": "Cicatriz Cafe",
+      "tags": ["restaurant", "cafe", "food", "american-style brunch", "lunch"],
+      "price": "$$"
+    },
+    {
+      "name": "Nudo Negro",
+      "tags": ["restaurant", "food", "fusion", "asian", "mexican", "fine dining"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Boicot Cafe",
+      "tags": ["restaurant", "cafe", "coffee", "chain"],
+      "price": "$"
+    },
+    {
+      "name": "Helena",
+      "tags": ["restaurant", "food", "contemporary", "seafood"],
+      "price": "$$$"
+    },
+    {
+      "name": "Clandestina",
+      "tags": ["restaurant", "bar", "mezcaleria", "nightlife"],
+      "price": "$$"
+    },
+    {
+      "name": "Masala y Maíz",
+      "tags": ["restaurant", "food", "fusion", "indian", "mexican", "fine dining"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Ticuchi",
+      "tags": ["restaurant", "food", "oaxacan", "vegetarian", "fine dining"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Campobaja",
+      "tags": ["restaurant", "food", "seafood", "baja mexican"],
+      "price": "$$$"
+    },
+    {
+      "name": "El Tizoncito",
+      "tags": ["restaurant", "food", "tacos", "pastor"],
+      "price": "$"
+    },
+    {
+      "name": "Testal",
+      "tags": ["restaurant", "food", "traditional mexican", "upscale"],
+      "price": "$$$"
+    },
+    {
+      "name": "Maque",
+      "tags": ["restaurant", "food", "bakery", "cafe"],
+      "price": "$$"
+    },
+    {
+      "name": "Matisse",
+      "tags": ["restaurant", "food", "bakery", "cafe"],
+      "price": "$$"
+    },
+    {
+      "name": "Ficelle",
+      "tags": ["restaurant", "food", "bakery", "french pastries"],
+      "price": "$$"
+    },
+    {
+      "name": "Macorina",
+      "tags": ["restaurant", "food", "bakery", "cafe"],
+      "price": "$$"
+    },
+    {
+      "name": "Carmela y Sal",
+      "tags": ["restaurant", "food", "modern mexican", "upscale"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Carmela DeMorada",
+      "tags": ["restaurant", "food", "modern mexican", "upscale"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Arroyo",
+      "tags": ["restaurant", "food", "traditional mexican", "experience", "large venue", "barbacoa"],
+      "price": "$$$"
+    },
+    {
+      "name": "La Docena",
+      "tags": ["restaurant", "food", "seafood", "oyster bar"],
+      "price": "$$$"
+    },
+    {
+      "name": "Palominos",
+      "tags": ["restaurant", "food", "steakhouse", "sonoran", "mexican"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Cambalache",
+      "tags": ["restaurant", "food", "steakhouse", "argentinian"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Don Vergas Mariscos",
+      "tags": ["restaurant", "food", "seafood", "sinaloan", "mexican", "market stall"],
+      "price": "$$"
+    },
+    {
+      "name": "La Unica",
+      "tags": ["restaurant", "bar", "cantina", "mexican", "upscale"],
+      "price": "$$$"
+    },
+    {
+      "name": "La Imperial",
+      "tags": ["restaurant", "bar", "cantina", "mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "Nicos",
+      "tags": ["restaurant", "food", "traditional mexican", "upscale", "fine dining"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Fonda Fina",
+      "tags": ["restaurant", "food", "modern mexican", "fonda style", "elevated"],
+      "price": "$$$"
+    },
+    {
+      "name": "Todo al Carbon",
+      "tags": ["restaurant", "food", "steakhouse", "grill", "mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "Villa María",
+      "tags": ["restaurant", "food", "traditional mexican", "festive"],
+      "price": "$$$"
+    },
+    {
+      "name": "La Pagoda",
+      "tags": ["restaurant", "cafe", "food", "mexican", "old school"],
+      "price": "$"
+    },
+    {
+      "name": "Los Girasoles",
+      "tags": ["restaurant", "food", "traditional mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "Entremar",
+      "tags": ["restaurant", "food", "seafood", "mexican", "sister to contramar"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Garum",
+      "tags": ["restaurant", "food", "mediterranean", "italian"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Meroma",
+      "tags": ["restaurant", "food", "modern mexican", "contemporary", "fine dining"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Pasillo de Humo",
+      "tags": ["restaurant", "food", "oaxacan", "mexican"],
+      "price": "$$$"
+    },
+    {
+      "name": "EM",
+      "tags": ["restaurant", "food", "modern mexican", "fine dining", "tasting menu"],
+      "price": "$$$$"
+    },
+    {
+      "name": "El Califa",
+      "tags": ["restaurant", "food", "tacos", "mexican chain"],
+      "price": "$$"
+    },
+    {
+      "name": "El Vilsito",
+      "tags": ["restaurant", "food", "tacos", "pastor", "cult favorite"],
+      "price": "$"
+    },
+    {
+      "name": "Tacos Manolo",
+      "tags": ["restaurant", "food", "tacos"],
+      "price": "$"
+    },
+    {
+      "name": "El Huequito",
+      "tags": ["restaurant", "food", "tacos", "pastor", "chain"],
+      "price": "$"
+    },
+    {
+      "name": "El Villamelón",
+      "tags": ["restaurant", "food", "tacos", "cecina", "campechano"],
+      "price": "$"
+    },
+    {
+      "name": "Sartoría",
+      "tags": ["restaurant", "food", "italian", "pasta", "fine dining"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Rokai Ramen Ya / Rokai",
+      "tags": ["restaurant", "food", "japanese", "ramen", "sushi"],
+      "price": "$$$"
+    },
+    {
+      "name": "Hiyoko",
+      "tags": ["restaurant", "food", "japanese", "yakitori", "omakase", "fine dining"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Niddo",
+      "tags": ["restaurant", "food", "breakfast", "brunch", "international"],
+      "price": "$$$"
+    },
+    {
+      "name": "Forte Bread and Coffee",
+      "tags": ["restaurant", "food", "bakery", "cafe", "pizza"],
+      "price": "$$"
+    },
+    {
+      "name": "Galanga Thai House",
+      "tags": ["restaurant", "food", "thai"],
+      "price": "$$$"
+    },
+    {
+      "name": "Makan",
+      "tags": ["restaurant", "food", "singaporean"],
+      "price": "$$$"
+    },
+    {
+      "name": "Los Chupacabras",
+      "tags": ["restaurant", "food", "tacos", "street food"],
+      "price": "$"
+    },
+    {
+      "name": "Tacuche Arabe",
+      "tags": ["restaurant", "food", "tacos", "tacos arabes", "puebla style"],
+      "price": "$"
+    },
+    {
+      "name": "El Rincón de la Lechuza",
+      "tags": ["restaurant", "food", "tacos"],
+      "price": "$"
+    },
+    {
+      "name": "Suuwaii",
+      "tags": ["restaurant", "food", "sushi", "thai", "japanese"],
+      "price": "$$"
+    },
+    {
+      "name": "Pollos Poncho",
+      "tags": ["restaurant", "food", "tacos", "chicken"],
+      "price": "$"
+    },
+    {
+      "name": "Los Cocuyos",
+      "tags": ["restaurant", "food", "tacos", "suadero", "offal", "street food"],
+      "price": "$"
+    },
+    {
+      "name": "Parker & Lenox",
+      "tags": ["restaurant", "bar", "cocktails", "jazz club", "speakeasy", "nightlife"],
+      "price": "$$$"
+    },
+    {
+      "name": "Mamba Rumba Cafe",
+      "tags": ["restaurant", "bar", "nightclub", "salsa", "nightlife"],
+      "price": "$$"
+    },
+    {
+      "name": "Mambo Cafe",
+      "tags": ["restaurant", "bar", "nightclub", "salsa", "nightlife"],
+      "price": "$$"
+    },
+    {
+      "name": "Salon Tenampa",
+      "tags": ["restaurant", "bar", "cantina", "mariachi experience", "nightlife"],
+      "price": "$$"
+    },
+    {
+      "name": "Cafe Vegetal",
+      "tags": ["restaurant", "cafe", "food", "vegan", "brunch"],
+      "price": "$$"
+    },
+    {
+      "name": "Malportaco",
+      "tags": ["restaurant", "food", "vegan", "tacos", "street food"],
+      "price": "$"
+    },
+    {
+      "name": "Vegamo",
+      "tags": ["restaurant", "cafe", "food", "vegan"],
+      "price": "$$"
+    },
+    {
+      "name": "ELK Vegan Bistro",
+      "tags": ["restaurant", "food", "vegan", "bakery", "bistro"],
+      "price": "$$"
+    },
+    {
+      "name": "Aguachiles Veg",
+      "tags": ["restaurant", "food", "vegan", "seafood alternative"],
+      "price": "$$"
+    },
+    {
+      "name": "Gatorta",
+      "tags": ["restaurant", "food", "vegan", "street food", "tortas", "tacos"],
+      "price": "$"
+    },
+    {
+      "name": "Veganion",
+      "tags": ["restaurant", "food", "vegan", "mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "Utopia Pizzeria Vegana",
+      "tags": ["restaurant", "food", "vegan", "pizza", "empanadas"],
+      "price": "$$"
+    },
+    {
+      "name": "Cluny",
+      "tags": ["restaurant", "food", "french", "crepes", "salad bar"],
+      "price": "$$$"
+    },
+    {
+      "name": "VEGuerrero Tacos Veganos",
+      "tags": ["restaurant", "food", "vegan", "tacos"],
+      "price": "$"
+    },
+    {
+      "name": "Templo de los Krishnas",
+      "tags": ["restaurant", "food", "indian", "vegetarian", "vegan"],
+      "price": "$"
+    },
+    {
+      "name": "Jug Vegetariano",
+      "tags": ["restaurant", "food", "vegetarian", "vegan", "juice bar"],
+      "price": "$"
+    },
+    {
+      "name": "Vegan Inc.",
+      "tags": ["restaurant", "food", "vegan", "international", "mall restaurant"],
+      "price": "$$"
+    },
+    {
+      "name": "Lenny Veggie",
+      "tags": ["restaurant", "food", "vegan", "tacos"],
+      "price": "$"
+    },
+    {
+      "name": "Paraíso Grill",
+      "tags": ["restaurant", "food", "vegan", "tacos", "barbacoa alternative"],
+      "price": "$"
+    },
+    {
+      "name": "Mictlan",
+      "tags": ["restaurant", "bar", "food", "vegan", "mexican", "pulqueria"],
+      "price": "$"
+    },
+    {
+      "name": "Aura Vegana",
+      "tags": ["restaurant", "food", "vegan", "healthy"],
+      "price": "$$"
+    },
+    {
+      "name": "Rincon Veggie",
+      "tags": ["restaurant", "food", "vegan"],
+      "price": "$"
+    },
+    {
+      "name": "Tacomido",
+      "tags": ["restaurant", "food", "vegan", "tacos"],
+      "price": "$"
+    },
+    {
+      "name": "Tacomixtle",
+      "tags": ["restaurant", "food", "vegan", "tacos"],
+      "price": "$"
+    },
+    {
+      "name": "Bellinghausen",
+      "tags": ["restaurant", "food", "traditional european", "mexican", "old school"],
+      "price": "$$$"
+    },
+    {
+      "name": "LA casa de los abuelos",
+      "tags": ["restaurant", "food", "mexican chain", "diner style"],
+      "price": "$"
+    },
+    {
+      "name": "Sanborns",
+      "tags": ["restaurant", "cafe", "food", "mexican chain", "department store restaurant", "historic"],
+      "price": "$"
+    },
+    {
+      "name": "Salazar",
+      "tags": ["restaurant", "food", "contemporary mexican", "rooftop"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Salón Rios",
+      "tags": ["restaurant", "bar", "cantina", "mexican", "nightlife"],
+      "price": "$$"
+    },
+    {
+      "name": "King Cole Bar",
+      "tags": ["restaurant", "bar", "cocktails", "upscale hotel bar", "nightlife"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Ling Ling",
+      "tags": ["restaurant", "food", "asian fusion", "upscale", "views", "nightlife"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Taquería Gabriel",
+      "tags": ["restaurant", "food", "tacos", "modern mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "Pizzería Balboa",
+      "tags": ["restaurant", "food", "pizza"],
+      "price": "$$"
+    },
+    {
+      "name": "La Polar",
+      "tags": ["restaurant", "food", "birria", "mexican cantina"],
+      "price": "$$"
+    },
+    {
+      "name": "La Tonina",
+      "tags": ["restaurant", "food", "tacos", "northern mexican", "flour tortillas"],
+      "price": "$"
+    },
+    {
+      "name": "El Califa de León",
+      "tags": ["restaurant", "food", "tacos", "gaonera", "steak", "michelin star"],
+      "price": "$$"
+    },
+    {
+      "name": "El Paisa",
+      "tags": ["restaurant", "food", "tacos", "suadero", "street food"],
+      "price": "$"
+    },
+    {
+      "name": "El Gran Premio",
+      "tags": ["restaurant", "cafe", "coffee shop"],
+      "price": "$"
+    },
+    {
+      "name": "La Especial de París",
+      "tags": ["restaurant", "food", "ice cream", "dessert"],
+      "price": "$"
+    },
+    {
+      "name": "Sala Gastronómica",
+      "tags": ["restaurant", "food", "mexican", "museum restaurant"],
+      "price": "$$$"
+    },
+    {
+      "name": "Eno",
+      "tags": ["restaurant", "cafe", "food", "contemporary", "bakery"],
+      "price": "$$"
+    },
+    {
+      "name": "Hacienda de los Morales",
+      "tags": ["restaurant", "food", "french-mexican fusion", "upscale", "historic", "architecture"],
+      "price": "$$$$"
+    },
+    {
+      "name": "La Casa del Pastor",
+      "tags": ["restaurant", "food", "tacos", "pastor", "chain"],
+      "price": "$$"
+    },
+    {
+      "name": "Jekemir",
+      "tags": ["restaurant", "cafe", "coffee shop", "lebanese"],
+      "price": "$"
+    },
+    {
+      "name": "Au pied du Cochon",
+      "tags": ["restaurant", "food", "french bistro", "24/7", "late night"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Chapulín",
+      "tags": ["restaurant", "food", "modern mexican", "upscale hotel restaurant"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Café Nin",
+      "tags": ["restaurant", "cafe", "food", "bakery", "breakfast", "brunch"],
+      "price": "$$$"
+    },
+    {
+      "name": "Havre 77",
+      "tags": ["restaurant", "food", "french bistro", "seafood"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Amaya",
+      "tags": ["restaurant", "food", "baja med", "natural wine", "wine bar"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Tamales Madre",
+      "tags": ["restaurant", "food", "tamales", "mexican", "heirloom corn"],
+      "price": "$$"
+    },
+    {
+      "name": "Café Habana",
+      "tags": ["restaurant", "cafe", "historic"],
+      "price": "$"
+    },
+    {
+      "name": "Café el Nacional",
+      "tags": ["restaurant", "cafe", "food", "chinese-mexican cafe culture", "breakfast"],
+      "price": "$"
+    },
+    {
+      "name": "La texcocana",
+      "tags": ["restaurant", "food", "tortas", "mexican"],
+      "price": "$"
+    },
+    {
+      "name": "Tacos de Oro XEW",
+      "tags": ["restaurant", "food", "tacos", "cochinita pibil"],
+      "price": "$"
+    },
+    {
+      "name": "Ricos Tacos Toluca",
+      "tags": ["restaurant", "food", "tacos", "chorizo"],
+      "price": "$"
+    },
+    {
+      "name": "Mi Fonda",
+      "tags": ["restaurant", "food", "spanish", "paella"],
+      "price": "$$"
+    },
+    {
+      "name": "Café Villarías",
+      "tags": ["restaurant", "cafe", "coffee shop"],
+      "price": "$"
+    },
+    {
+      "name": "El Casino Español",
+      "tags": ["restaurant", "bar", "food", "spanish", "cantina", "historic"],
+      "price": "$$$"
+    },
+    {
+      "name": "Azulísimo",
+      "tags": ["restaurant", "food", "traditional mexican", "historical dishes"],
+      "price": "$$$"
+    },
+    {
+      "name": "Bar Mancera",
+      "tags": ["restaurant", "bar", "cantina", "mexican", "historic art deco", "architecture"],
+      "price": "$$"
+    },
+    {
+      "name": "Zéfiro",
+      "tags": ["restaurant", "food", "mexican", "upscale", "training restaurant"],
+      "price": "$$"
+    },
+    {
+      "name": "Roldán 37",
+      "tags": ["restaurant", "food", "mexican", "chiles rellenos", "mole", "market setting"],
+      "price": "$$$"
+    },
+    {
+      "name": "La Rambla",
+      "tags": ["restaurant", "food", "diner", "spanish", "mexican", "historic", "cheap"],
+      "price": "$"
+    },
+    {
+      "name": "El Rey del Pavo",
+      "tags": ["restaurant", "food", "diner", "mexican", "turkey focus", "cheap"],
+      "price": "$"
+    },
+    {
+      "name": "Hosteria la bota",
+      "tags": ["restaurant", "bar", "food", "spanish", "tapas"],
+      "price": "$$"
+    },
+    {
+      "name": "La peninsular",
+      "tags": ["restaurant", "bar", "cantina", "historic"],
+      "price": "$$"
+    },
+    {
+      "name": "El Gallo de Oro",
+      "tags": ["restaurant", "bar", "cantina", "historic"],
+      "price": "$$"
+    },
+    {
+      "name": "La Potosina",
+      "tags": ["restaurant", "bar", "cantina"],
+      "price": "$$"
+    },
+    {
+      "name": "La Mascota",
+      "tags": ["restaurant", "bar", "cantina"],
+      "price": "$$"
+    },
+    {
+      "name": "Bar Gante",
+      "tags": ["restaurant", "bar", "cantina"],
+      "price": "$$"
+    },
+    {
+      "name": "Covadonga",
+      "tags": ["restaurant", "bar", "food", "spanish", "cantina", "old school"],
+      "price": "$$"
+    },
+    {
+      "name": "Taquería El Parnita",
+      "tags": ["restaurant", "food", "tacos", "mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "Merotoro",
+      "tags": ["restaurant", "food", "baja med", "seafood", "meat"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Riviera del Sur",
+      "tags": ["restaurant", "bar", "cantina", "yucatecan"],
+      "price": "$$"
+    },
+    {
+      "name": "La esquina del Chilaquil",
+      "tags": ["restaurant", "food", "street food", "chilaquiles", "tortas"],
+      "price": "$"
+    },
+    {
+      "name": "Molino el Pujol",
+      "tags": ["restaurant", "cafe", "food", "mexican", "corn-focused", "tortilleria"],
+      "price": "$$"
+    },
+    {
+      "name": "Maizajo",
+      "tags": ["restaurant", "food", "mexican", "corn-focused", "tortilleria"],
+      "price": "$$"
+    },
+    {
+      "name": "Maíz y Cacao",
+      "tags": ["restaurant", "food", "mexican", "huastecan", "corn-focused"],
+      "price": "$$"
+    },
+    {
+      "name": "Emme",
+      "tags": ["restaurant", "food", "bakery", "pastries"],
+      "price": "$$"
+    },
+    {
+      "name": "El Centenario",
+      "tags": ["restaurant", "bar", "cantina"],
+      "price": "$$"
+    },
+    {
+      "name": "El León de Oro",
+      "tags": ["restaurant", "bar", "cantina"],
+      "price": "$$"
+    },
+    {
+      "name": "Cantón Mexicali",
+      "tags": ["restaurant", "food", "chinese-mexican fusion"],
+      "price": "$$"
+    },
+    {
+      "name": "Castacán",
+      "tags": ["restaurant", "food", "mexican", "seafood"],
+      "price": "$$$"
+    },
+    {
+      "name": "Gaba",
+      "tags": ["restaurant", "food", "oaxacan", "mexican"],
+      "price": "$$$"
+    },
+    {
+      "name": "Kill Bill",
+      "tags": ["restaurant", "food", "japanese", "omakase", "sushi"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Lina",
+      "tags": ["restaurant", "food", "contemporary"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Las costillas",
+      "tags": ["restaurant", "food", "tacos", "ribs"],
+      "price": "$"
+    },
+    {
+      "name": "Tony",
+      "tags": ["restaurant", "food", "tacos"],
+      "price": "$"
+    },
+    {
+      "name": "Juan Bisteces",
+      "tags": ["restaurant", "food", "tacos", "steak"],
+      "price": "$"
+    },
+    {
+      "name": "Los Parados",
+      "tags": ["restaurant", "food", "tacos", "standing taqueria chain"],
+      "price": "$"
+    },
+    {
+      "name": "Los Chamorros de Tlacoquemécatl",
+      "tags": ["restaurant", "food", "fonda", "mexican", "chamorro"],
+      "price": "$$"
+    },
+    {
+      "name": "El Pastor de Sirloin",
+      "tags": ["restaurant", "food", "tacos", "pastor", "sirloin"],
+      "price": "$$"
+    },
+    {
+      "name": "Los Gueros",
+      "tags": ["restaurant", "food", "tacos", "pastor", "cult favorite"],
+      "price": "$"
+    },
+    {
+      "name": "Los gabachos",
+      "tags": ["restaurant", "food", "tacos", "pastor", "cult favorite"],
+      "price": "$"
+    },
+    {
+      "name": "El pastorcito",
+      "tags": ["restaurant", "food", "tacos", "pastor", "cult favorite"],
+      "price": "$"
+    },
+    {
+      "name": "Enrique",
+      "tags": ["restaurant", "food", "barbacoa", "mexican"],
+      "price": "$$$"
+    },
+    {
+      "name": "La Coyoacana",
+      "tags": ["restaurant", "bar", "cantina", "mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "Los Danzantes",
+      "tags": ["restaurant", "food", "oaxacan", "mexican", "upscale"],
+      "price": "$$$"
+    },
+    {
+      "name": "El Corazón del Maguey",
+      "tags": ["restaurant", "bar", "food", "oaxacan", "mexican", "mezcaleria"],
+      "price": "$$$"
+    },
+    {
+      "name": "El Morral",
+      "tags": ["restaurant", "food", "traditional mexican", "fonda style"],
+      "price": "$$"
+    },
+    {
+      "name": "La Bipolar",
+      "tags": ["restaurant", "bar", "cantina"],
+      "price": "$$"
+    },
+    {
+      "name": "San Angel Inn",
+      "tags": ["restaurant", "food", "mexican", "international", "historic", "upscale", "architecture"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Tetetlan",
+      "tags": ["restaurant", "food", "mexican", "contemporary", "upscale", "cultural center"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Moctezuma 12",
+      "tags": ["restaurant", "food", "pozole", "mexican", "guerrero style"],
+      "price": "$$"
+    },
+    {
+      "name": "Amaranta",
+      "tags": ["restaurant", "food", "modern mexican", "state of mexico focus"],
+      "price": "$$$$"
+    },
+    {
+      "name": "La Oriental",
+      "tags": ["restaurant", "food", "tacos arabes", "puebla style", "chain"],
+      "price": "$"
+    },
+    {
+      "name": "Taquería Bagdad",
+      "tags": ["restaurant", "food", "tacos arabes", "puebla style", "original la oriental"],
+      "price": "$"
+    },
+    {
+      "name": "El As de Oros",
+      "tags": ["restaurant", "food", "cemitas", "puebla style", "market stall"],
+      "price": "$"
+    },
+    {
+      "name": "Evoka",
+      "tags": ["restaurant", "food", "modern mexican", "tlaxcala focus"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Taqueria los amigos",
+      "tags": ["restaurant", "food", "tacos", "pastor", "street food", "late night"],
+      "price": "$"
+    },
+    {
+      "name": "Las Dietéticas",
+      "tags": ["restaurant", "food", "quesadillas", "street food"],
+      "price": "$"
+    },
+    {
+      "name": "Tacos Tony",
+      "tags": ["restaurant", "food", "tacos", "suadero", "campechano", "street food"],
+      "price": "$"
+    },
+    {
+      "name": "El Mexiquense",
+      "tags": ["restaurant", "food", "barbacoa", "mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "El Fogón",
+      "tags": ["restaurant", "food", "tacos", "tripa"],
+      "price": "$"
+    },
+    {
+      "name": "La Vikina",
+      "tags": ["restaurant", "food", "gorditas", "antojitos"],
+      "price": "$"
+    },
+    {
+      "name": "Taqueria Hermanos Luna",
+      "tags": ["restaurant", "food", "gorditas", "antojitos"],
+      "price": "$"
+    },
+    {
+      "name": "La Perla Tapatía",
+      "tags": ["restaurant", "food", "birria", "mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "El Rincon del Periban",
+      "tags": ["restaurant", "food", "carnitas", "mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "La Buena Barra",
+      "tags": ["restaurant", "food", "steakhouse", "mexican", "fine dining"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Nido Café",
+      "tags": ["restaurant", "cafe", "food", "breakfast", "chilaquiles"],
+      "price": "$$"
+    },
+    {
+      "name": "Madre Café",
+      "tags": ["restaurant", "cafe", "food", "breakfast"],
+      "price": "$$$"
+    },
+    {
+      "name": "Cabanna",
+      "tags": ["restaurant", "food", "seafood", "mexican"],
+      "price": "$$$"
+    },
+    {
+      "name": "Henry Sailor",
+      "tags": ["restaurant", "food", "seafood"],
+      "price": "$$$"
+    },
+    {
+      "name": "Ivoire",
+      "tags": ["restaurant", "food", "french", "international"],
+      "price": "$$$$"
+    },
+    {
+      "name": "l’entrecote",
+      "tags": ["restaurant", "food", "french", "steakhouse"],
+      "price": "$$$$"
+    },
+    {
+      "name": "Centro Castellano/Torre de Castilla",
+      "tags": ["restaurant", "food", "spanish"],
+      "price": "$$$"
+    },
+    {
+      "name": "Goguinara",
+      "tags": ["restaurant", "food", "korean"],
+      "price": "$$"
+    },
+    {
+      "name": "Deigo",
+      "tags": ["restaurant", "food", "japanese"],
+      "price": "$$$"
+    },
+    {
+      "name": "Tacos de Canasta Beto",
+      "tags": ["restaurant", "food", "tacos", "tacos de canasta", "street food"],
+      "price": "$"
+    },
+    {
+      "name": "Tacos de Canasta ViceVic",
+      "tags": ["restaurant", "food", "tacos", "tacos de canasta", "street food"],
+      "price": "$"
+    },
+    {
+      "name": "Tacos Moran",
+      "tags": ["restaurant", "food", "tacos", "tripa"],
+      "price": "$"
+    },
+    {
+      "name": "Taquería las Bombas",
+      "tags": ["restaurant", "food", "tacos", "tripa"],
+      "price": "$"
+    },
+    {
+      "name": "Tacos el paisa de los reyes",
+      "tags": ["restaurant", "food", "tacos"],
+      "price": "$"
+    },
+    {
+      "name": "Tacos Don Fello",
+      "tags": ["restaurant", "food", "tacos", "cabeza"],
+      "price": "$"
+    },
+    {
+      "name": "Puesto de tacos de cabeza",
+      "tags": ["restaurant", "food", "tacos", "cabeza", "street food"],
+      "price": "$"
+    },
+    {
+      "name": "Tacos Charly",
+      "tags": ["restaurant", "food", "tacos", "suadero", "lengua"],
+      "price": "$"
+    },
+    {
+      "name": "Taquitos de mixiote castelan",
+      "tags": ["restaurant", "food", "tacos", "mixiotes", "street food"],
+      "price": "$"
+    },
+    {
+      "name": "Carnitas Jorge Y Cocina Lupita",
+      "tags": ["restaurant", "food", "carnitas", "quesadillas", "sesos", "market stall"],
+      "price": "$"
+    },
+    {
+      "name": "FRITURAS ROY",
+      "tags": ["restaurant", "food", "carnitas"],
+      "price": "$"
+    },
+    {
+      "name": "El Venadito",
+      "tags": ["restaurant", "food", "carnitas"],
+      "price": "$$"
+    },
+    {
+      "name": "Barbacoa ''El Puente''",
+      "tags": ["restaurant", "food", "barbacoa", "mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "El Pialadero de Guadalajara",
+      "tags": ["restaurant", "food", "birria", "mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "Tacos Hola El Güero",
+      "tags": ["restaurant", "food", "tacos", "guisados"],
+      "price": "$"
+    },
+    {
+      "name": "Tacos de Guisado",
+      "tags": ["restaurant", "food", "tacos", "guisados"],
+      "price": "$"
+    },
+    {
+      "name": "El Maquech Púrpura",
+      "tags": ["restaurant", "food", "yucatecan", "mexican"],
+      "price": "$$"
+    },
+    {
+      "name": "Cochinita Power",
+      "tags": ["restaurant", "food", "cochinita pibil", "tacos", "tortas", "yucatecan"],
+      "price": "$$"
+    },
+    {
+      "name": "El Club del Asador. Parrilla de paso",
+      "tags": ["restaurant", "food", "tacos", "grill", "late night"],
+      "price": "$"
+    },
+    {
+      "name": "Tacos De Birria De Res Con Tuetano",
+      "tags": ["restaurant", "food", "tacos", "birria", "bone marrow"],
+      "price": "$"
+    },
+    {
+      "name": "Tacos Beto Los De Cochinada",
+      "tags": ["restaurant", "food", "tacos", "cochinada", "street food"],
+      "price": "$"
+    },
+    {
+      "name": "Los milanesos",
+      "tags": ["restaurant", "food", "tacos", "milanesa"],
+      "price": "$"
+    },
+    {
+      "name": "Tacos Gabriel",
+      "tags": ["restaurant", "food", "tacos"],
+      "price": "$"
+    },
+    {
+      "name": "Botanico",
+      "tags": ["restaurant", "food", "modern mexican", "bar"],
+      "price": "$$$"
+    }
+  ]

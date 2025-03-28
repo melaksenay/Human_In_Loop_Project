@@ -1,0 +1,486 @@
+[
+    {
+      "name": "Roma (Norte/Sur)",
+      "tags": ["neighborhood"]
+    },
+    {
+      "name": "Condesa",
+      "tags": ["neighborhood"]
+    },
+    {
+      "name": "Polanco",
+      "tags": ["neighborhood", "shopping", "restaurant"]
+    },
+    {
+      "name": "Centro Histórico",
+      "tags": ["neighborhood", "history", "landmark", "architecture"]
+    },
+    {
+      "name": "Coyoacán",
+      "tags": ["neighborhood", "culture", "market"]
+    },
+    {
+      "name": "San Ángel",
+      "tags": ["neighborhood", "artisan", "market", "architecture"]
+    },
+    {
+      "name": "Juárez",
+      "tags": ["neighborhood"]
+    },
+    {
+      "name": "Santa María la Ribera",
+      "tags": ["neighborhood", "landmark"]
+    },
+    {
+      "name": "Tlatelolco",
+      "tags": ["neighborhood", "history", "archaeological site"]
+    },
+    {
+      "name": "Del Valle",
+      "tags": ["neighborhood"]
+    },
+    {
+      "name": "Narvarte",
+      "tags": ["neighborhood"]
+    },
+    {
+      "name": "Escandon",
+      "tags": ["neighborhood"]
+    },
+    {
+      "name": "Chapultepec Park (Bosque de Chapultepec)",
+      "tags": ["park", "city park", "museum", "attraction"]
+    },
+    {
+      "name": "Parque México",
+      "tags": ["park", "city park"]
+    },
+    {
+      "name": "Parque España",
+      "tags": ["park", "city park"]
+    },
+    {
+      "name": "Parque Lincoln",
+      "tags": ["park", "city park"]
+    },
+    {
+      "name": "Parque La Mexicana",
+      "tags": ["park", "city park"]
+    },
+    {
+      "name": "UNAM Botanical Garden",
+      "tags": ["park", "city park", "nature"]
+    },
+    {
+      "name": "Viveros de Coyoacán",
+      "tags": ["park", "city park", "nature"]
+    },
+    {
+      "name": "Alameda Central",
+      "tags": ["park", "city park", "landmark", "history"]
+    },
+    {
+      "name": "Parque Bicentenario",
+      "tags": ["park", "city park"]
+    },
+    {
+      "name": "Bosque de Tlalpan",
+      "tags": ["park", "city park", "nature", "hike"]
+    },
+    {
+      "name": "El Tepeyac National Park",
+      "tags": ["park", "city park", "hike", "nature"]
+    },
+    {
+      "name": "Desierto de los Leones National Park",
+      "tags": ["park", "hike", "day trip", "nature", "history"]
+    },
+    {
+      "name": "Los Dinamos National Park",
+      "tags": ["park", "hike", "day trip", "nature"]
+    },
+    {
+      "name": "Nevado de Toluca National Park",
+      "tags": ["park", "hike", "day trip", "nature", "volcano"]
+    },
+    {
+      "name": "Monarch Butterfly Biosphere Reserve",
+      "tags": ["park", "hike", "day trip", "nature", "wildlife"]
+    },
+    {
+      "name": "Cumbres del Ajusco National Park (El Ajusco)",
+      "tags": ["park", "hike", "day trip", "nature"]
+    },
+    {
+       "name": "Iztaccíhuatl–Popocatépetl National Park (Izta-Popo)",
+       "tags": ["park", "hike", "day trip", "nature", "volcano"]
+     },
+     {
+       "name": "El Tepozteco National Park",
+       "tags": ["park", "hike", "day trip", "nature", "archaeological site"]
+     },
+     {
+       "name": "La Malinche National Park",
+       "tags": ["park", "hike", "day trip", "nature", "volcano"]
+     },
+     {
+       "name": "Grutas de Cacahuamilpa National Park",
+       "tags": ["park", "day trip", "nature", "cave"]
+     },
+     {
+       "name": "Lagunas de Zempoala National Park",
+       "tags": ["park", "hike", "day trip", "nature", "lakes"]
+     },
+     {
+       "name": "San Nicolas Totolapan Ejidal Park",
+       "tags": ["park", "hike", "day trip", "nature"]
+     },
+    {
+      "name": "Anthropology Museum (Museo Nacional de Antropología)",
+      "tags": ["museum", "anthropology", "history", "culture"]
+    },
+    {
+      "name": "Chapultepec Castle (Museo Nacional de Historia)",
+      "tags": ["museum", "history", "landmark", "architecture"]
+    },
+    {
+      "name": "Frida Kahlo Museum (Casa Azul)",
+      "tags": ["museum", "art", "history"]
+    },
+    {
+      "name": "Palacio de Bellas Artes",
+      "tags": ["museum", "art", "architecture", "landmark", "entertainment"]
+    },
+    {
+      "name": "Templo Mayor (and Museum)",
+      "tags": ["museum", "archaeological site", "history", "culture"]
+    },
+    {
+      "name": "Soumaya Museum",
+      "tags": ["museum", "art", "architecture"]
+    },
+    {
+      "name": "Jumex Museum",
+      "tags": ["museum", "art", "contemporary art"]
+    },
+    {
+      "name": "Museo Anahuacalli",
+      "tags": ["museum", "art", "history", "architecture"]
+    },
+    {
+      "name": "Museo de Arte Popular (MAP)",
+      "tags": ["museum", "art", "culture", "artisan"]
+    },
+    {
+      "name": "MUNAL (Museo Nacional de Arte)",
+      "tags": ["museum", "art", "history"]
+    },
+    {
+      "name": "Museo del Estanquillo",
+      "tags": ["museum", "culture"]
+    },
+    {
+      "name": "Antiguo Colegio de San Ildefonso",
+      "tags": ["museum", "art", "history", "architecture"]
+    },
+    {
+      "name": "Museo Memoria y Tolerancia",
+      "tags": ["museum", "history"]
+    },
+    {
+      "name": "Franz Mayer Museum",
+      "tags": ["museum", "art", "design"]
+    },
+    {
+      "name": "Museo Nacional de la Acuarela",
+      "tags": ["museum", "art"]
+    },
+    {
+      "name": "Museo de la Revolución",
+      "tags": ["museum", "history"]
+    },
+    {
+      "name": "Trotsky Museum",
+      "tags": ["museum", "history"]
+    },
+    {
+      "name": "Museo Panteón de San Fernando",
+      "tags": ["museum", "history", "cemetery"]
+    },
+    {
+      "name": "Museo del Pulque y las Pulquerías",
+      "tags": ["museum", "culture", "food", "bar"]
+    },
+    {
+      "name": "Museo del Caracol",
+      "tags": ["museum", "history"]
+    },
+    {
+      "name": "Museo de Arte Moderno",
+      "tags": ["museum", "art", "modern art"]
+    },
+    {
+      "name": "Tamayo Museum",
+      "tags": ["museum", "art", "contemporary art"]
+    },
+    {
+      "name": "Museo del Objeto del Objeto (MODO)",
+      "tags": ["museum", "design", "culture"]
+    },
+    {
+      "name": "Museo Nacional de las Intervenciones",
+      "tags": ["museum", "history"]
+    },
+    {
+      "name": "Museo Banco de Mexico",
+      "tags": ["museum", "history", "architecture"]
+    },
+    {
+      "name": "MUAC (Museo Universitario Arte Contemporáneo)",
+      "tags": ["museum", "art", "contemporary art", "university"]
+    },
+    {
+      "name": "Universum (Science Museum)",
+      "tags": ["museum", "science", "family friendly", "university"]
+    },
+    {
+      "name": "Museo de Geología",
+      "tags": ["museum", "science", "university"]
+    },
+    {
+      "name": "Museo del Chopo",
+      "tags": ["museum", "art", "culture", "university"]
+    },
+    {
+      "name": "Papalote Museo del Niño",
+      "tags": ["museum", "family friendly", "science"]
+    },
+    {
+      "name": "Diego Rivera Mural Museum",
+      "tags": ["museum", "art", "history"]
+    },
+    {
+      "name": "Casa Estudio Luis Barragán",
+      "tags": ["museum", "architecture", "design"]
+    },
+    {
+      "name": "Zócalo (Plaza de la Constitución)",
+      "tags": ["landmark", "plaza", "history", "culture"]
+    },
+    {
+      "name": "Metropolitan Cathedral",
+      "tags": ["landmark", "architecture", "history", "religion"]
+    },
+    {
+      "name": "Palacio Nacional",
+      "tags": ["landmark", "architecture", "history", "art"]
+    },
+    {
+      "name": "Angel de la Independencia",
+      "tags": ["landmark", "monument", "history"]
+    },
+    {
+      "name": "Torre Latinoamericana",
+      "tags": ["landmark", "architecture", "viewpoint"]
+    },
+    {
+      "name": "Palacio Postal",
+      "tags": ["landmark", "architecture", "history"]
+    },
+    {
+      "name": "Monumento a la Revolución",
+      "tags": ["landmark", "monument", "history", "architecture", "museum"]
+    },
+    {
+      "name": "Plaza de las Tres Culturas",
+      "tags": ["landmark", "plaza", "history", "archaeological site", "architecture"]
+    },
+    {
+      "name": "Biblioteca Vasconcelos",
+      "tags": ["landmark", "architecture", "library"]
+    },
+    {
+      "name": "Kiosco Morisco",
+      "tags": ["landmark", "architecture"]
+    },
+    {
+      "name": "UNAM Campus (Ciudad Universitaria)",
+      "tags": ["landmark", "architecture", "university", "culture"]
+    },
+    {
+      "name": "Fuente de la Cibeles",
+      "tags": ["landmark", "fountain"]
+    },
+    {
+      "name": "Arena México",
+      "tags": ["venue", "entertainment", "activity", "culture"]
+    },
+    {
+      "name": "Estadio Azteca",
+      "tags": ["venue", "entertainment", "sports"]
+    },
+    {
+      "name": "Autódromo Hermanos Rodríguez",
+      "tags": ["venue", "entertainment", "sports"]
+    },
+    {
+      "name": "Mercado de San Juan",
+      "tags": ["market", "food"]
+    },
+    {
+      "name": "La Merced Market",
+      "tags": ["market", "food", "shopping"]
+    },
+    {
+      "name": "Lagunilla Flea Market",
+      "tags": ["market", "shopping", "antiques"]
+    },
+    {
+      "name": "Mercado de Coyoacán",
+      "tags": ["market", "food", "shopping"]
+    },
+    {
+      "name": "Mercado de Artesanías La Ciudadela",
+      "tags": ["market", "shopping", "artisan", "culture"]
+    },
+    {
+      "name": "Bazar del Sábado (San Ángel)",
+      "tags": ["market", "shopping", "artisan", "art"]
+    },
+    {
+      "name": "Tianguis del Chopo",
+      "tags": ["market", "shopping", "culture", "music"]
+    },
+    {
+      "name": "Mercado Jamaica (Flower Market)",
+      "tags": ["market", "shopping", "flowers"]
+    },
+    {
+      "name": "Xochimilco (Floating Gardens)",
+      "tags": ["activity", "culture", "nature", "tour", "boat"]
+    },
+    {
+      "name": "Lucha Libre",
+      "tags": ["activity", "entertainment", "culture"]
+    },
+    {
+      "name": "Biking on Reforma (Sundays)",
+      "tags": ["activity", "outdoor", "sports"]
+    },
+    {
+      "name": "Walking Tours",
+      "tags": ["activity", "tour"]
+    },
+    {
+      "name": "Food Tours",
+      "tags": ["activity", "tour", "food"]
+    },
+    {
+      "name": "Cooking Classes",
+      "tags": ["activity", "food", "culture"]
+    },
+    {
+      "name": "Hot Air Balloon over Teotihuacan",
+      "tags": ["activity", "tour", "day trip", "viewpoint"]
+    },
+    {
+      "name": "Explore street food stalls",
+      "tags": ["activity", "food", "culture"]
+    },
+    {
+      "name": "Ballet Folklórico de México (at Bellas Artes)",
+      "tags": ["activity", "entertainment", "culture", "dance"]
+    },
+    {
+      "name": "Mezcal Tasting",
+      "tags": ["activity", "food", "bar", "culture"]
+    },
+    {
+      "name": "Teotihuacan Pyramids",
+      "tags": ["day trip", "archaeological site", "history"]
+    },
+    {
+      "name": "Puebla",
+      "tags": ["day trip", "town", "culture", "food", "architecture"]
+    },
+    {
+      "name": "Cholula",
+      "tags": ["day trip", "town", "archaeological site", "culture"]
+    },
+    {
+      "name": "Tepoztlán",
+      "tags": ["day trip", "town", "hike", "nature", "archaeological site"]
+    },
+    {
+      "name": "Taxco",
+      "tags": ["day trip", "town", "culture", "shopping", "silver"]
+    },
+    {
+      "name": "Toluca",
+      "tags": ["day trip", "town"]
+    },
+    {
+      "name": "Valle de Bravo",
+      "tags": ["day trip", "town", "nature", "lake"]
+    },
+    {
+      "name": "Malinalco",
+      "tags": ["day trip", "town", "archaeological site", "history"]
+    },
+    {
+      "name": "Xochicalco",
+      "tags": ["day trip", "archaeological site", "history"]
+    },
+    {
+      "name": "Grutas de Tolantongo",
+      "tags": ["day trip", "nature", "hot springs", "cave"]
+    },
+    {
+      "name": "Paseo de la Reforma",
+      "tags": ["street", "avenue", "landmark"]
+    },
+    {
+      "name": "Av. Álvaro Obregón",
+      "tags": ["street", "avenue"]
+    },
+    {
+      "name": "Av. Ámsterdam",
+      "tags": ["street", "avenue"]
+    },
+    {
+      "name": "Masaryk Avenue",
+      "tags": ["street", "avenue", "shopping"]
+    },
+    {
+      "name": "Madero Street",
+      "tags": ["street", "avenue", "pedestrian"]
+    },
+    {
+      "name": "Plaza Garibaldi",
+      "tags": ["plaza", "landmark", "culture", "music"]
+    },
+    {
+      "name": "Plaza Rio de Janeiro",
+      "tags": ["plaza", "landmark"]
+    },
+    {
+      "name": "Plaza Luis Cabrera",
+      "tags": ["plaza"]
+    },
+    {
+      "name": "Kidzania",
+      "tags": ["attraction", "family friendly", "entertainment"]
+    },
+    {
+      "name": "Six Flags Mexico",
+      "tags": ["attraction", "family friendly", "entertainment", "theme park"]
+    },
+    {
+      "name": "Chapultepec Zoo",
+      "tags": ["attraction", "family friendly", "wildlife", "zoo"]
+    },
+    {
+      "name": "Aquarium Inbursa",
+      "tags": ["attraction", "family friendly", "aquarium"]
+    }
+  ]
