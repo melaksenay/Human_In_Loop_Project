@@ -17,25 +17,25 @@ class ActivityPreprocessor:
             {
                 "question": "What's your budget preference?",
                 "choices": [
-                    {"text": "Budget-friendly", "tags": ["price:low", "street-food", "free-activities"]},
-                    {"text": "Mid-range", "tags": ["price:medium", "casual-dining", "paid-activities"]},
-                    {"text": "Luxury", "tags": ["price:high", "fine-dining", "premium-experiences"]}
+                    {"text": "Budget-friendly", "tags": ["price:low", "street food", "tacos", "antojitos"]},
+                    {"text": "Mid-range", "tags": ["price:medium", "casual dining", "fonda style"]},
+                    {"text": "High-end", "tags": ["price:high", "fine dining", "upscale", "tasting menu"]}
                 ]
             },
             {
-                "question": "What kind of activities interest you most?",
+                "question": "What type of cuisine interests you most?",
                 "choices": [
-                    {"text": "Cultural & Museums", "tags": ["cultural", "museums", "history", "art"]},
-                    {"text": "Food & Dining", "tags": ["food", "restaurants", "culinary", "dining"]},
-                    {"text": "Outdoor & Adventure", "tags": ["outdoor", "adventure", "nature", "active"]}
+                    {"text": "Traditional Mexican", "tags": ["traditional mexican", "tacos", "mexican", "mole"]},
+                    {"text": "Modern/Contemporary", "tags": ["modern mexican", "contemporary", "fusion"]},
+                    {"text": "International", "tags": ["japanese", "italian", "french", "korean", "thai"]}
                 ]
             },
             {
-                "question": "What's your preferred experience type?",
+                "question": "What kind of dining experience do you prefer?",
                 "choices": [
-                    {"text": "Tourist Attractions", "tags": ["tourist", "popular", "guided-tours"]},
-                    {"text": "Local Experiences", "tags": ["local", "authentic", "hidden-gems"]},
-                    {"text": "Mix of Both", "tags": ["tourist", "local", "varied-experiences"]}
+                    {"text": "Quick & Casual", "tags": ["street food", "tacos", "market stall", "casual"]},
+                    {"text": "Bar & Social", "tags": ["bar", "cantina", "nightlife", "cocktails"]},
+                    {"text": "Special Occasion", "tags": ["fine dining", "upscale", "tasting menu", "historic"]}
                 ]
             }
         ]

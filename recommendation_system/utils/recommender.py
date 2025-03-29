@@ -1,5 +1,6 @@
 import pandas as pd
-from ..data.preprocessor import ActivityPreprocessor
+import os
+from recommendation_system.data.preprocessor import ActivityPreprocessor
 
 class ActivityRecommender:
     def __init__(self, activities_path):
@@ -22,10 +23,8 @@ class ActivityRecommender:
         for item_id, similarity_score in top_items:
             activity = self.activities_df.iloc[item_id]
             recommendations.append({
-                'title': activity['title'],
-                'url': activity['url'],
-                'score': activity['score'],
-                'text': activity['text'][:200] + '...',  # First 200 chars
+                'name': activity['name'],
+                'tags': activity['tags'],
                 'similarity': round(similarity_score, 3)
             })
         
@@ -38,17 +37,26 @@ class ActivityRecommender:
         tags = activity.get('tags', [])
         if tags:
             self.preprocessor.update_user_embedding(" ".join(tags))
-        return f"Updated preferences based on: {activity['title']}"
+        return f"Updated preferences based on: {activity['name']}"
 
 # Use it:
 if __name__ == "__main__":
-    recommender = ActivityRecommender("mexico_city_activities.json")
+    # Get the absolute path to the data directory
+    current_dir = os.path.dirname(os.path.abspath(__file__))  # utils directory
+    root_dir = os.path.dirname(os.path.dirname(current_dir))  # project root
+    data_path = os.path.join(root_dir, "data", "restaurants.json")
+    
+    print(f"Looking for file at: {data_path}")  # Debug print
+    
+    recommender = ActivityRecommender(data_path)
+    
+    # recommender = ActivityRecommender("../../Human_In_Loop_Project/data/restaurants.json")
     
     # Get initial recommendations
     recommendations = recommender.get_recommendations()
     print("\nInitial Recommendations:")
     for i, rec in enumerate(recommendations, 1):
-        print(f"{i}. {rec['title']} (similarity: {rec['similarity']})")
+        print(f"{i}. {rec['name']} (similarity: {rec['similarity']})")
     
     # simulation:
     while True:
@@ -64,7 +72,7 @@ if __name__ == "__main__":
                 recommendations = recommender.get_recommendations()
                 print("\nNew Recommendations:")
                 for i, rec in enumerate(recommendations, 1):
-                    print(f"{i}. {rec['title']} (similarity: {rec['similarity']})")
+                    print(f"{i}. {rec['name']} (similarity: {rec['similarity']})")
             else:
                 print("Please enter a valid number")
         except ValueError:
