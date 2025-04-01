@@ -32,11 +32,13 @@ class ActivityRecommender:
     
     def update_preference(self, activity_id):
         """Update user preferences based on selected activity"""
+        print(f"Selected activity: {self.activities_df.iloc[activity_id]['name']}")
         activity = self.activities_df.iloc[activity_id]
         # Use the activity's tags to update user preferences
         tags = activity.get('tags', [])
         if tags:
             self.preprocessor.update_user_embedding(" ".join(tags))
+        self.preprocessor.recommended_items.add(activity_id)
         return f"Updated preferences based on: {activity['name']}"
 
 # Use it:
@@ -65,7 +67,10 @@ if __name__ == "__main__":
             if choice == 0:
                 break
             if 1 <= choice <= len(recommendations):
-                selected_id = choice - 1
+                selected_name = recommendations[choice-1]['name']
+                selected_id = recommender.activities_df[recommender.activities_df['name'] == selected_name].index[0]
+                print(f"Selected ID: {selected_id}") #debugging
+                print(f"Selected activity: {recommender.activities_df.iloc[selected_id]}") #debugging
                 print(recommender.update_preference(selected_id))
                 
                 # Get the new recs with the updated preferences:

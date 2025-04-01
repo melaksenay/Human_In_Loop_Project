@@ -11,6 +11,7 @@ class ActivityPreprocessor:
         self.model = AutoModel.from_pretrained(transformer_model)
         self.user_embedding = None  # This is the user tower representation --> WE'RE GETTING THIS BEFORE ANYTHING ELSE.
         self.item_embeddings = {}   # The item tower: mapping from item ID to embedding vector --> EMBEDS TEXT FROM JSON FILE.
+        self.recommended_items = set() # we will not be recommending duplicate destinations.
 
         # Define initial questions with fixed choices and their tags
         self.initial_questions = [
@@ -100,10 +101,14 @@ class ActivityPreprocessor:
         user_vec = self.user_embedding.reshape(1, -1)
         similarities = cosine_similarity(user_vec, embeddings)[0]
         
-        # Get the indices of the top k most similar items.
-        top_indices = np.argsort(similarities)[::-1][:k]
-        top_items = [(item_ids[i], similarities[i]) for i in top_indices]
-        return top_items
+        #Filter previously recommended items:
+        filtered_items = [
+            (item_ids[i], similarities[i]) for i in range(len(item_ids)) if item_ids[i] not in self.recommended_items
+        ]
+        filtered_items.sort(key = lambda x: x[1], reverse=True)
+        topk_items = filtered_items[:k]
+        
+        return topk_items
 
     def present_questionnaire(self):
         """Present questions to user via console and collect their choices"""
