@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}Your Recommendations - Mexico City Explorer{% endblock %}
+
+{% block content %}
+<h1 class="display-5 text-center mb-4">Your Mexico City Recommendations</h1>
+
+<div class="alert alert-info">
+    <p class="mb-0">
+        <strong>Tip:</strong> Click "Add to Preferences" on any recommendation you like to refine your results.
+    </p>
+</div>
+
+<!-- Selection History Section - Always visible -->
+<div class="card mb-4 shadow">
+    <div class="card-header bg-secondary text-white">
+        <h2 class="h3 mb-0">Your Selected Items</h2>
+    </div>
+    <div class="card-body">
+        {% if selected_items_info and selected_items_info|length > 0 %}
+            <div class="row">
+                {% for item in selected_items_info %}
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.name }}</h5>
+                            <p class="card-text small text-muted">
+                                {% if item.type == 'restaurant' %}
+                                <span class="badge bg-primary">Restaurant</span>
+                                {% else %}
+                                <span class="badge bg-success">Activity</span>
+                                {% endif %}
+                            </p>
+                            <div class="mt-2">
+                                {% for tag in item.tags %}
+                                <span class="badge bg-light text-dark me-1">{{ tag }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="text-center">No items selected yet. Add items to your preferences to refine your recommendations!</p>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Restaurants Section -->
+<div class="card mb-4 shadow">
+    <div class="card-header bg-primary text-white">
+        <h2 class="h3 mb-0">Recommended Restaurants</h2>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            {% for idx, restaurant in restaurant_recommendations %}
+            <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ restaurant.name }}</h5>
+                        <div class="mb-3">
+                            {% for tag in restaurant.tags %}
+                            <span class="badge bg-light text-dark me-1">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                        <form action="{{ url_for('select_item', item_type='restaurant', item_id=idx) }}" method="post">
+                            <button type="submit" class="btn btn-sm btn-outline-primary">Add to Preferences</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Activities Section -->
+<div class="card mb-4 shadow">
+    <div class="card-header bg-success text-white">
+        <h2 class="h3 mb-0">Recommended Activities</h2>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            {% for idx, activity in activity_recommendations %}
+            <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ activity.name }}</h5>
+                        <div class="mb-3">
+                            {% for tag in activity.tags %}
+                            <span class="badge bg-light text-dark me-1">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                        <form action="{{ url_for('select_item', item_type='activity', item_id=idx) }}" method="post">
+                            <button type="submit" class="btn btn-sm btn-outline-success">Add to Preferences</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-4">
+    <form action="{{ url_for('reset') }}" method="post" class="d-inline">
+        <button type="submit" class="btn btn-secondary">Start Over</button>
+    </form>
+</div>
+{% endblock %}

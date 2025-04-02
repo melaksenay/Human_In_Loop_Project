@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Questionnaire - Mexico City Explorer{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card shadow">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">{{ question.question }}</h2>
+                
+                <div class="progress mb-4">
+                    <div class="progress-bar" role="progressbar" style="width: {{ progress }}%;" 
+                         aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100">
+                        {{ progress }}%
+                    </div>
+                </div>
+                
+                <form action="{{ url_for('answer') }}" method="post" id="questionForm">
+                    <div class="row g-4">
+                        {% for choice in question.choices %}
+                            <div class="col-md-4">
+                                <div class="card choice-card h-100" style="cursor: pointer;" onclick="document.getElementById('choice{{ loop.index0 }}').checked = true; document.getElementById('questionForm').submit();">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ choice.text }}</h5>
+                                        <p class="card-text small text-muted">
+                                            {% for tag in choice.tags %}
+                                                <span class="badge bg-light text-dark me-1">{{ tag }}</span>
+                                            {% endfor %}
+                                        </p>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="choice" id="choice{{ loop.index0 }}" value="{{ loop.index0 }}" style="display: none;">
+                                            <label class="form-check-label w-100" for="choice{{ loop.index0 }}">
+                                                <button type="button" class="btn btn-outline-primary w-100">Select</button>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

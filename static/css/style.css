@@ -1,0 +1,102 @@
+/* Custom styling for Mexico City Recommender */
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.bg-primary {
+    background-color: #e91e63 !important;  /* Mexican pink */
+}
+
+.btn-primary {
+    background-color: #e91e63;
+    border-color: #e91e63;
+}
+
+.btn-primary:hover {
+    background-color: #c2185b;
+    border-color: #c2185b;
+}
+
+.btn-outline-primary {
+    color: #e91e63;
+    border-color: #e91e63;
+}
+
+.btn-outline-primary:hover {
+    background-color: #e91e63;
+    border-color: #e91e63;
+}
+
+.bg-success {
+    background-color: #006847 !important;  /* Mexican green */
+}
+
+.btn-outline-success {
+    color: #006847;
+    border-color: #006847;
+}
+
+.btn-outline-success:hover {
+    background-color: #006847;
+    border-color: #006847;
+}
+
+.card {
+    border-radius: 10px;
+    border: none;
+    overflow: hidden;
+}
+
+.card-header {
+    font-weight: bold;
+}
+
+.progress-bar {
+    background-color: #e91e63;
+}
+
+/* Choice cards styling */
+.choice-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #dee2e6;
+}
+
+.choice-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Tags styling */
+.badge {
+    font-weight: normal;
+    padding: 5px 8px;
+    margin-bottom: 3px;
+    display: inline-block;
+}
+
+/* Mexico colors theme */
+.text-mexico-red {
+    color: #ce1126;
+}
+
+.text-mexico-green {
+    color: #006847;
+}
+
+.text-mexico-white {
+    color: #ffffff;
+}
+
+/* Footer styling */
+footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    border-top: 1px solid #dee2e6;
+}
