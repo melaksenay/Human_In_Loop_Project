@@ -176,7 +176,7 @@ def answer():
     restaurant_rec, activity_rec = initialize_recommenders()
     
     # Update both recommenders with the selected choice
-    choice_text = selected_choice['text'] + " " + " ".join(selected_choice['tags'])
+    choice_text = " ".join(selected_choice['tags'])
     print(f"Updating recommender embeddings with: {choice_text}")
     restaurant_rec.update_user_embedding(choice_text)
     activity_rec.update_user_embedding(choice_text)
@@ -288,7 +288,7 @@ def select_item(item_type, item_id):
         # Mark as recommended to avoid showing again
         restaurant_rec.mark_as_recommended(item_id)
         # Update user embedding with the selected item
-        item_text = selected_item['name'] + " " + " ".join(selected_item.get('tags', []))
+        item_text = " ".join(selected_item.get('tags', []))
         print(f"Updating restaurant recommender with: {item_text}")
         restaurant_rec.update_user_embedding(item_text)
     else:
@@ -296,7 +296,7 @@ def select_item(item_type, item_id):
         # Mark as recommended to avoid showing again
         activity_rec.mark_as_recommended(item_id)
         # Update user embedding with the selected item
-        item_text = selected_item['name'] + " " + " ".join(selected_item.get('tags', []))
+        item_text = " ".join(selected_item.get('tags', []))
         print(f"Updating activity recommender with: {item_text}")
         activity_rec.update_user_embedding(item_text)
     
