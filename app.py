@@ -6,6 +6,10 @@ import numpy as np
 import torch
 from transformers import AutoTokenizer, AutoModel
 from sklearn.metrics.pairwise import cosine_similarity
+from uuid import uuid4
+import csv
+import os
+
 
 # Import the NLP recommender - Fixed import path
 from utils.nlp_recommender import NLPRecommender
@@ -115,11 +119,19 @@ def index():
     # Clear any existing session data when visiting the home page
     print("Clearing session on index page visit")
     session.clear()
+    session['user_id'] = str(uuid4())
+    responses_path = os.path.join(app.root_path, 'data', 'responses.csv')
+    if not os.path.exists(responses_path):
+        with open(responses_path, 'w', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(['user_id','selected_items','ratings','score'])
     return render_template('index.html')
 
 # Questionnaire page
 @app.route('/questionnaire')
 def questionnaire():
+    if 'max_selection' not in session:
+        return render_template('set_max.html')
     # Reset the session if we're starting fresh
     if 'question_index' not in session:
         print("Initializing questionnaire session...")
@@ -251,6 +263,12 @@ def recommendations():
 @app.route('/select/<item_type>/<int:item_id>', methods=['POST'])
 def select_item(item_type, item_id):
     print(f"Selected {item_type} with ID {item_id}")
+    # Only add if not already in selected items
+    max_sel = session.get('max_selection', 0)
+    current = session.get('selected_items', [])
+    # If they’ve already reached their limit, go rate instead
+    if len(current) >= max_sel:
+        return redirect(url_for('rate'))
     
     # Load data
     activities, restaurants = load_data()
@@ -329,6 +347,46 @@ def reset():
         activity_recommender.recommended_items = set()
     
     return redirect(url_for('index'))
+
+@app.route('/set_max', methods=['POST'])
+def set_max():
+    # Save the user's choice of max recommendations
+    session['max_selection'] = int(request.form['max_selection'])
+    # Initialize selected_items if not already
+    session.setdefault('selected_items', [])
+    return redirect(url_for('questionnaire'))
+
+@app.route('/rate')
+def rate():
+    # Gather selected_items_info exactly as you do in /recommendations
+    activities, restaurants = load_data()
+    info = []
+    for idx, t in session.get('selected_items', []):
+        item = (restaurants if t=='restaurant' else activities)[idx]
+        info.append((idx, {'name': item['name']}))
+    return render_template('rate.html', selected_items_info=info)
+
+@app.route('/submit_rating', methods=['POST'])
+def submit_rating():
+    user_id = session['user_id']
+    # Build ratings dict and compute score (e.g. average)
+    ratings = []
+    for idx, _ in session['selected_items']:
+        r = int(request.form[f'rating_{idx}'])
+        ratings.append((idx, r))
+    average_score = sum(r for _,r in ratings) / len(ratings)
+
+    # Append to CSV
+    path = os.path.join(app.root_path, 'data', 'responses.csv')
+    with open(path, 'a', newline='') as f:
+        writer = csv.writer(f)
+        selected_str = ";".join(f"{idx}:{t}" for idx,t in session['selected_items'])
+        ratings_str  = ";".join(f"{idx}:{r}" for idx,r in ratings)
+        writer.writerow([user_id, selected_str, ratings_str, average_score])
+
+    return render_template('thanks.html', score=average_score)
+
+
 
 if __name__ == '__main__':
     print("Starting Mexico City Recommender Web App...")
