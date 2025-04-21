@@ -52,3 +52,10 @@ The script generates a JSON file containing:
 - Number of comments
 
 The results are sorted by score and duplicates are removed.
+
+
+
+To see it  work locally, run 
+```bash
+python app.py
+```
