@@ -98,7 +98,8 @@ def get_recommendations(preferences, item_type, count=5):
     if recommender.user_embedding is None:
         preference_text = " ".join(preferences)
         print(f"Initializing {item_type} embedding with: {preference_text[:100]}...")
-        recommender.update_user_embedding(preference_text)
+        # recommender.update_user_embedding(preference_text)
+        recommender.exponential_moving_average_embedding_update(preference_text)
     
     # Get recommendations
     print(f"Getting {count} {item_type} recommendations...")
@@ -190,8 +191,10 @@ def answer():
     # Update both recommenders with the selected choice
     choice_text = " ".join(selected_choice['tags'])
     print(f"Updating recommender embeddings with: {choice_text}")
-    restaurant_rec.update_user_embedding(choice_text)
-    activity_rec.update_user_embedding(choice_text)
+    # restaurant_rec.update_user_embedding(choice_text)
+    # activity_rec.update_user_embedding(choice_text)
+    restaurant_rec.exponential_moving_average_embedding_update(choice_text)
+    activity_rec.exponential_moving_average_embedding_update(choice_text)
     
     # Move to the next question
     session['question_index'] = session.get('question_index', 0) + 1
@@ -308,7 +311,8 @@ def select_item(item_type, item_id):
         # Update user embedding with the selected item
         item_text = " ".join(selected_item.get('tags', []))
         print(f"Updating restaurant recommender with: {item_text}")
-        restaurant_rec.update_user_embedding(item_text)
+        # restaurant_rec.update_user_embedding(item_text)
+        restaurant_rec.exponential_moving_average_embedding_update(item_text)
     else:
         selected_item = activities[item_id]
         # Mark as recommended to avoid showing again
@@ -316,7 +320,8 @@ def select_item(item_type, item_id):
         # Update user embedding with the selected item
         item_text = " ".join(selected_item.get('tags', []))
         print(f"Updating activity recommender with: {item_text}")
-        activity_rec.update_user_embedding(item_text)
+        # activity_rec.update_user_embedding(item_text)
+        activity_rec.exponential_moving_average_embedding_update(item_text)
     
     # Add tags from the selected item to preferences
     if 'preferences' not in session:

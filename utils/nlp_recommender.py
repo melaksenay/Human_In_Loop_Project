@@ -34,18 +34,41 @@ class NLPRecommender:
         else:
             # Simple moving average for updating
             self.user_embedding = (self.user_embedding + new_embedding) / 2
+    
+    def exponential_moving_average_embedding_update(self, selection_text, alpha = 0.8):
+        """
+        Update the user embedding based on new selection.
+        Uses exponential moving average when updating existing embedding.
+        """
+        new_embedding = self.embed_text(selection_text)
+        if self.user_embedding is None:
+            self.user_embedding = new_embedding
+        else:
+            #Exponential moving average
+            self.user_embedding = (1-alpha) * self.user_embedding + (alpha) * new_embedding
+            self.user_embedding /= np.linalg.norm(self.user_embedding) #normalize the embedding
 
-    def create_item_embedding(self, item):
+    def create_item_embedding(self, item, weight_multiplier= 3):
         """
         Create an embedding for an item based on its tags.
+        What changed: I added a weight multiplier to the price tags. This is kinda quick and dirty, but it works.
+        The idea is to give more weight to the price tags when creating the embedding.
         """
         # Create text representation from tags
         tags = item.get('tags', [])
+        # name = item.get('name', '')
         text = " ".join(tags)
-        # Add name for additional context
-        name = item.get('name', '')
-        if name:
-            text = name + " " + text
+        
+        price_tags = [tag for tag in tags if tag.startswith('price:')]
+        other_tags = [tag for tag in tags if not tag.startswith("price:")]
+        
+        weighted_tags = price_tags*weight_multiplier  + other_tags
+        text = " ".join(weighted_tags)
+        
+        # # Add name for additional context
+        '''We might not need this.'''
+        # if name:
+        #     text = name + " " + text
         return self.embed_text(text)
 
     def build_item_embeddings(self, items_list):
