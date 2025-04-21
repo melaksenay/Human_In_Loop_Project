@@ -1,2 +1,4 @@
 user_id,selected_items,ratings,score
 26341b84-3114-4fdb-a732-4ee2fdcf52e2,182:restaurant;100:activity;5:activity;3:activity;242:restaurant,182:4;100:4;5:5;3:5;242:5,4.6
+bd5892b3-dd52-4773-8e08-a90b9db1fd45,243:restaurant;87:restaurant;199:restaurant;22:restaurant;50:restaurant;0:restaurant;94:restaurant;34:activity;36:activity;64:activity,243:3;87:5;199:5;22:2;50:3;0:5;94:5;34:5;36:5;64:3,4.1
+ac06f945-66b0-4018-93b5-1384279c13f4,0:restaurant;51:restaurant;199:restaurant;22:restaurant;50:restaurant;34:activity;58:activity;36:activity;64:activity;165:restaurant,0:5;51:3;199:5;22:4;50:3;34:5;58:1;36:5;64:4;165:3,3.8
