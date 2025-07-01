@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to Mexico City Explorer{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+        <h1 class="display-4 mb-4">Discover Mexico City</h1>
+        <div class="card shadow mb-4">
+            <img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.11.0/flags/4x3/mx.svg" 
+                 class="mx-auto d-block mt-4" style="width: 80px; height: auto;" alt="Mexico Flag">
+            <div class="card-body">
+                <h5 class="card-title">Personalized Recommendations</h5>
+                <p class="card-text">
+                    Find the best restaurants, attractions, and activities in Mexico City
+                    tailored to your preferences. Answer a few simple questions, and we'll
+                    suggest places you'll love.
+                </p>
+                <a href="{{ url_for('questionnaire') }}" class="btn btn-primary btn-lg">Get Started</a>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Restaurants</h5>
+                        <p class="card-text">Discover the best places to eat, from street tacos to fine dining.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Activities</h5>
+                        <p class="card-text">Explore museums, parks, landmarks, and cultural experiences.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Neighborhoods</h5>
+                        <p class="card-text">Learn about the city's diverse neighborhoods and what they offer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
