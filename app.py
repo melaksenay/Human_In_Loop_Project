@@ -8,28 +8,42 @@ from transformers import AutoTokenizer, AutoModel
 from sklearn.metrics.pairwise import cosine_similarity
 from uuid import uuid4
 import csv
-import os
+from dotenv import load_dotenv
 
+# Load environment variables from .env file
+load_dotenv()
 
-# Import the NLP recommender - Fixed import path
+# Import the NLP recommender
 from utils.nlp_recommender import NLPRecommender
 
 app = Flask(__name__)
 app.secret_key = 'mexico_city_recommender_2025'  # For session management
 
+# --- Path Configuration ---
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
 # Initialize recommenders
 restaurant_recommender = None
 activity_recommender = None
 
-# Load data
+# Load data - now optional since we use Pinecone metadata
 def load_data():
-    with open('data/activities.json', 'r', encoding='utf-8') as f:
-        activities = json.load(f)
-    with open('data/restaurants.json', 'r', encoding='utf-8') as f:
-        restaurants = json.load(f)
-    return activities, restaurants
+    """
+    Load local JSON data if available, otherwise return empty lists.
+    With full Pinecone integration, this is only used for setup/migration.
+    """
+    try:
+        with open(os.path.join(BASE_DIR, 'data', 'activities.json'), 'r', encoding='utf-8') as f:
+            activities = json.load(f)
+        with open(os.path.join(BASE_DIR, 'data', 'restaurants.json'), 'r', encoding='utf-8') as f:
+            restaurants = json.load(f)
+        print("Loaded local JSON data files")
+        return activities, restaurants
+    except FileNotFoundError as e:
+        print(f"Local JSON files not found - using Pinecone metadata only: {e}")
+        return [], []
 
-# Initial questions (simplified from the original ActivityPreprocessor)
+
 initial_questions = [
     {
         "question": "What's your budget preference?",
@@ -66,7 +80,7 @@ initial_questions = [
 ]
 
 def initialize_recommenders():
-    """Initialize the NLP recommenders with data"""
+    """Initialize the NLP recommenders with Pinecone indexes"""
     global restaurant_recommender, activity_recommender
     
     # Load data if not already loaded
@@ -74,20 +88,45 @@ def initialize_recommenders():
     
     # Initialize restaurant recommender if needed
     if restaurant_recommender is None:
-        print("Initializing restaurant recommender...")
-        restaurant_recommender = NLPRecommender()
-        restaurant_recommender.build_item_embeddings(restaurants)
+        print("Initializing restaurant recommender with Pinecone...")
+        restaurant_recommender = NLPRecommender(index_name='restaurants')
+        
+        # Check if we need to populate the index
+        if restaurant_recommender.index:
+            try:
+                # get the index statistics
+                stats = restaurant_recommender.index.describe_index_stats()
+                if stats['total_vector_count'] == 0:
+                    print("Populating restaurant index...")
+                    restaurant_recommender.populate_index(restaurants)
+                else:
+                    print(f"Restaurant index already contains {stats['total_vector_count']} vectors")
+            except Exception as e:
+                print(f"Error checking restaurant index stats: {e}")
     
     # Initialize activity recommender if needed
     if activity_recommender is None:
-        print("Initializing activity recommender...")
-        activity_recommender = NLPRecommender()
-        activity_recommender.build_item_embeddings(activities)
+        print("Initializing activity recommender with Pinecone...")
+        activity_recommender = NLPRecommender(index_name='activities')
+        
+        # Check if we need to populate the index
+        if activity_recommender.index:
+            try:
+                # Try to get index stats
+                stats = activity_recommender.index.describe_index_stats()
+                if stats['total_vector_count'] == 0:
+                    print("Populating activity index...")
+                    activity_recommender.populate_index(activities)
+                else:
+                    print(f"Activity index already contains {stats['total_vector_count']} vectors")
+            except Exception as e:
+                print(f"Error checking activity index stats: {e}")
     
     return restaurant_recommender, activity_recommender
 
 def get_recommendations(preferences, item_type, count=5):
-    """Get recommendations using the NLP recommender"""
+    """Get recommendations using the Pinecone-backed NLP recommender. 
+    Needed to switch to Pinecone to cut down Docker Image size!"""
     # Initialize recommenders if needed
     restaurant_rec, activity_rec = initialize_recommenders()
     
@@ -98,19 +137,33 @@ def get_recommendations(preferences, item_type, count=5):
     if recommender.user_embedding is None:
         preference_text = " ".join(preferences)
         print(f"Initializing {item_type} embedding with: {preference_text[:100]}...")
-        recommender.update_user_embedding(preference_text)
-        # recommender.exponential_moving_average_embedding_update(preference_text)
+        recommender.exponential_moving_average_embedding_update(preference_text)
     
-    # Get recommendations
-    print(f"Getting {count} {item_type} recommendations...")
+    # Get recs and metadata
+    print(f"Getting {count} {item_type} recommendations from Pinecone...")
     recommendations = recommender.get_recommendations(k=count)
     
-    # Load the actual items
-    activities, restaurants = load_data()
-    items = restaurants if item_type == 'restaurant' else activities
+    # Return (idx, item_metadata) pairs so no more JSONs.
+    result = []
+    for idx, score, metadata in recommendations:
+        # Convert metadata back to item format
+        item = {
+            'name': metadata.get('name', ''),
+            'tags': metadata.get('tags', []),
+            'description': metadata.get('description', ''),
+            'price': metadata.get('price', ''),
+            'location': metadata.get('location', ''),
+            'address': metadata.get('address', ''),
+            'cuisine': metadata.get('cuisine', ''),
+            'rating': metadata.get('rating', ''),
+            'hours': metadata.get('hours', ''),
+            'phone': metadata.get('phone', ''),
+            'website': metadata.get('website', ''),
+        }
+        # Remove empty fields
+        item = {k: v for k, v in item.items() if v}
+        result.append((idx, item))
     
-    # Return (idx, item) pairs
-    result = [(idx, items[idx]) for idx, _ in recommendations]
     print(f"Returning {len(result)} {item_type} recommendations")
     return result
 
@@ -121,8 +174,10 @@ def index():
     print("Clearing session on index page visit")
     session.clear()
     session['user_id'] = str(uuid4())
-    responses_path = os.path.join(app.root_path, 'data', 'responses.csv')
+    responses_path = os.path.join(BASE_DIR, 'data', 'responses.csv')
     if not os.path.exists(responses_path):
+        # Ensure directory exists
+        os.makedirs(os.path.dirname(responses_path), exist_ok=True)
         with open(responses_path, 'w', newline='') as f:
             writer = csv.writer(f)
             writer.writerow(['user_id','selected_items','ratings','score'])
@@ -171,9 +226,15 @@ def answer():
     if 'choice' not in request.form:
         print("No choice submitted, redirecting back to questionnaire")
         return redirect(url_for('questionnaire'))
+    
+    # Check if we've completed all questions before processing
+    current_question_index = session.get('question_index', 0)
+    if current_question_index >= len(initial_questions):
+        print("All questions completed, redirecting to recommendations")
+        return redirect(url_for('recommendations'))
         
     choice_index = int(request.form.get('choice'))
-    current_question = initial_questions[session['question_index']]
+    current_question = initial_questions[current_question_index]
     selected_choice = current_question['choices'][choice_index]
     
     print(f"Selected choice: {selected_choice['text']}")
@@ -191,10 +252,10 @@ def answer():
     # Update both recommenders with the selected choice
     choice_text = " ".join(selected_choice['tags'])
     print(f"Updating recommender embeddings with: {choice_text}")
-    restaurant_rec.update_user_embedding(choice_text)
-    activity_rec.update_user_embedding(choice_text)
-    # restaurant_rec.exponential_moving_average_embedding_update(choice_text)
-    # activity_rec.exponential_moving_average_embedding_update(choice_text)
+    # restaurant_rec.update_user_embedding(choice_text)
+    # activity_rec.update_user_embedding(choice_text)
+    restaurant_rec.exponential_moving_average_embedding_update(choice_text)
+    activity_rec.exponential_moving_average_embedding_update(choice_text)
     
     # Move to the next question
     session['question_index'] = session.get('question_index', 0) + 1
@@ -231,29 +292,33 @@ def recommendations():
     print(f"Found {len(restaurant_recs)} restaurant recommendations")
     print(f"Found {len(activity_recs)} activity recommendations")
     
-    # Get detailed information about selected items
+    # Get detailed information about selected items - skip if no local data
     selected_items_info = []
     activities, restaurants = load_data()
     
-    for idx, item_type in selected_items:
-        try:
-            if item_type == 'restaurant':
-                item = restaurants[idx]
-                selected_items_info.append({
-                    'name': item['name'],
-                    'tags': item.get('tags', []),
-                    'type': 'restaurant'
-                })
-            else:
-                item = activities[idx]
-                selected_items_info.append({
-                    'name': item['name'],
-                    'tags': item.get('tags', []),
-                    'type': 'activity'
-                })
-        except (IndexError, KeyError) as e:
-            # Skip items that don't exist (shouldn't happen but just in case)
-            print(f"Error accessing item {idx} of type {item_type}: {e}")
+    # Only process selected items if we have local data, otherwise skip
+    if activities or restaurants:
+        for idx, item_type in selected_items:
+            try:
+                if item_type == 'restaurant' and idx < len(restaurants):
+                    item = restaurants[idx]
+                    selected_items_info.append({
+                        'name': item['name'],
+                        'tags': item.get('tags', []),
+                        'type': 'restaurant'
+                    })
+                elif item_type == 'activity' and idx < len(activities):
+                    item = activities[idx]
+                    selected_items_info.append({
+                        'name': item['name'],
+                        'tags': item.get('tags', []),
+                        'type': 'activity'
+                    })
+            except (IndexError, KeyError) as e:
+                # Skip items that don't exist
+                print(f"Error accessing item {idx} of type {item_type}: {e}")
+    else:
+        print("No local JSON data available - skipping selected items display")
     
     print(f"Selected items info: {selected_items_info}")
     
@@ -266,70 +331,57 @@ def recommendations():
 @app.route('/select/<item_type>/<int:item_id>', methods=['POST'])
 def select_item(item_type, item_id):
     print(f"Selected {item_type} with ID {item_id}")
-    # Only add if not already in selected items
-    max_sel = session.get('max_selection', 0)
-    current = session.get('selected_items', [])
-    # If they’ve already reached their limit, go rate instead
-    if len(current) >= max_sel:
-        return redirect(url_for('rate'))
     
-    # Load data
-    activities, restaurants = load_data()
-    
-    # Initialize selected items if needed
+    # Ensure we have a list of selected items
     if 'selected_items' not in session:
         session['selected_items'] = []
-    
-    # Convert to integer and check for valid id
-    item_id = int(item_id)
-    
-    # Only add if not already in selected items
-    if not any(idx == item_id and type_ == item_type for idx, type_ in session['selected_items']):
-        # Add the selected item
+
+    # Only add item if not already in list
+    if not any(idx == item_id and t == item_type for idx, t in session['selected_items']):
         session['selected_items'].append((item_id, item_type))
+        session.modified = True
         print(f"Updated selected items: {session['selected_items']}")
-    else:
-        print(f"Item already in selected_items")
     
-    # Debugging
-    print(f"Session items before: {session.get('selected_items')}")
+    # Check limit IMMEDIATELY after adding the item
+    max_sel = session.get('max_selection', 0)
+    current_count = len(session['selected_items'])
+    if current_count >= max_sel:
+        print(f"Reached selection limit ({max_sel}). Redirecting to /rate now.")
+        return redirect(url_for('rate'))
     
-    # Make sure selected_items persists in the session
-    session.modified = True
-    
-    # Debugging
-    print(f"Session items after: {session.get('selected_items')}")
-    
-    # Initialize recommenders
+    # If we haven’t reached the limit, do the usual embedding logic
     restaurant_rec, activity_rec = initialize_recommenders()
+    activities, restaurants = load_data()
+    selected_item = None
     
-    # Get the selected item and update the embedding
-    if item_type == 'restaurant':
+    if item_type == 'restaurant' and item_id < len(restaurants):
         selected_item = restaurants[item_id]
-        # Mark as recommended to avoid showing again
-        restaurant_rec.mark_as_recommended(item_id)
-        # Update user embedding with the selected item
-        item_text = " ".join(selected_item.get('tags', []))
-        print(f"Updating restaurant recommender with: {item_text}")
-        restaurant_rec.update_user_embedding(item_text)
-        # restaurant_rec.exponential_moving_average_embedding_update(item_text)
-    else:
+    elif item_type == 'activity' and item_id < len(activities):
         selected_item = activities[item_id]
-        # Mark as recommended to avoid showing again
-        activity_rec.mark_as_recommended(item_id)
-        # Update user embedding with the selected item
-        item_text = " ".join(selected_item.get('tags', []))
-        print(f"Updating activity recommender with: {item_text}")
-        activity_rec.update_user_embedding(item_text)
-        # activity_rec.exponential_moving_average_embedding_update(item_text)
     
-    # Add tags from the selected item to preferences
+    # Update embeddings
+    if selected_item:
+        item_text = " ".join(selected_item.get('tags', []))
+        print(f"Updating {item_type} recommender with tags: {item_text}")
+    else:
+        item_text = item_type
+        print(f"No data found; using generic tag: {item_text}")
+
+    if item_type == 'restaurant':
+        restaurant_rec.mark_as_recommended(item_id)
+        restaurant_rec.exponential_moving_average_embedding_update(item_text)
+    else:
+        activity_rec.mark_as_recommended(item_id)
+        activity_rec.exponential_moving_average_embedding_update(item_text)
+    
+    # Update preferences
     if 'preferences' not in session:
         session['preferences'] = []
-    
-    new_tags = selected_item.get('tags', [])
-    session['preferences'].extend(new_tags)
-    print(f"Updated preferences: {session['preferences']}")
+    if selected_item:
+        session['preferences'].extend(selected_item.get('tags', []))
+        print(f"Updated preferences: {session['preferences']}")
+    else:
+        print("No item data available to update preferences")
     
     return redirect(url_for('recommendations'))
 
@@ -363,13 +415,85 @@ def set_max():
 
 @app.route('/rate')
 def rate():
-    # Gather selected_items_info exactly as you do in /recommendations
-    activities, restaurants = load_data()
-    info = []
-    for idx, t in session.get('selected_items', []):
-        item = (restaurants if t=='restaurant' else activities)[idx]
-        info.append((idx, {'name': item['name']}))
-    return render_template('rate.html', selected_items_info=info)
+    """
+    Show the rating page and display human-readable names
+    fetched directly from Pinecone metadata.
+    """
+    restaurant_rec, activity_rec = initialize_recommenders()
+    selected_items_info = []
+
+    print(f"DEBUG: Selected items from session: {session.get('selected_items', [])}")
+
+    for idx, item_type in session.get('selected_items', []):
+        pinecone_index = (restaurant_rec.index
+                          if item_type == 'restaurant' else
+                          activity_rec.index)
+
+        print(f"DEBUG: Trying to fetch {item_type} with ID: {idx}")
+        
+        try:
+            # Fix for newer Pinecone SDK - correct parameter name
+            resp = pinecone_index.fetch(
+                ids=[str(idx)],
+                include_metadata=True  # This should work with newer SDK
+            )
+            
+            print(f"DEBUG: Pinecone response for {item_type} {idx}: {resp}")
+            
+            # The response structure might be different in newer SDK
+            if 'vectors' in resp:
+                meta = resp['vectors'].get(str(idx), {}).get('metadata', {})
+            else:
+                # Try alternative response structure
+                meta = resp.get(str(idx), {}).get('metadata', {})
+            
+            print(f"DEBUG: Metadata extracted: {meta}")
+            
+            name = meta.get('name') if meta.get('name') else f"{item_type.capitalize()} #{idx}"
+            
+            print(f"DEBUG: Final name for {item_type} {idx}: {name}")
+            
+        except Exception as e:
+            print(f"Error fetching {item_type} {idx} from Pinecone: {e}")
+            
+            # Let's try an alternative approach - query instead of fetch
+            try:
+                print(f"DEBUG: Trying query approach for {item_type} {idx}")
+                # Create a dummy query vector (all zeros) to get the item by filtering
+                dummy_vector = [0.0] * 384  # Match your embedding dimension
+                
+                query_resp = pinecone_index.query(
+                    vector=dummy_vector,
+                    filter={"original_index": idx},  # Filter by the original index
+                    top_k=1,
+                    include_metadata=True
+                )
+                
+                print(f"DEBUG: Query response: {query_resp}")
+                
+                if query_resp.get('matches') and len(query_resp['matches']) > 0:
+                    meta = query_resp['matches'][0].get('metadata', {})
+                    name = meta.get('name', f"{item_type.capitalize()} #{idx}")
+                    print(f"DEBUG: Got name from query: {name}")
+                else:
+                    name = f"{item_type.capitalize()} #{idx}"
+                    
+            except Exception as e2:
+                print(f"Query approach also failed: {e2}")
+                name = f"{item_type.capitalize()} #{idx}"
+
+        selected_items_info.append(
+            (idx, {'name': name, 'type': item_type})
+        )
+
+    print(f"DEBUG: Final selected_items_info: {selected_items_info}")
+
+    return render_template(
+        'rate.html',
+        selected_items_info=selected_items_info
+    )
+
+
 
 @app.route('/submit_rating', methods=['POST'])
 def submit_rating():
@@ -381,18 +505,24 @@ def submit_rating():
         ratings.append((idx, r))
     average_score = sum(r for _,r in ratings) / len(ratings)
 
-    # Append to CSV
-    path = os.path.join(app.root_path, 'data', 'responses.csv')
-    with open(path, 'a', newline='') as f:
-        writer = csv.writer(f)
-        selected_str = ";".join(f"{idx}:{t}" for idx,t in session['selected_items'])
-        ratings_str  = ";".join(f"{idx}:{r}" for idx,r in ratings)
-        writer.writerow([user_id, selected_str, ratings_str, average_score])
+    # Append to CSV - use BASE_DIR for cloud compatibility
+    path = os.path.join(BASE_DIR, 'data', 'responses.csv')
+    # Ensure the directory exists
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    
+    try:
+        with open(path, 'a', newline='') as f:
+            writer = csv.writer(f)
+            selected_str = ";".join(f"{idx}:{t}" for idx,t in session['selected_items'])
+            ratings_str = ";".join(f"{idx}:{r}" for idx,r in ratings)
+            writer.writerow([user_id, selected_str, ratings_str, average_score])
+    except Exception as e:
+        # In production, it's better to log this rather than fail
+        print(f"Warning: Could not write to responses.csv: {e}")
 
     return render_template('thanks.html', score=average_score)
 
-
-
 if __name__ == '__main__':
     print("Starting Mexico City Recommender Web App...")
-    app.run(debug=True)
+    # For AWS deployment, use 0.0.0.0 to listen on all interfaces
+    app.run(host='0.0.0.0', port=5000, debug=True)
